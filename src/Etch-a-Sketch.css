@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 600px;
+}
+
+.box {
+    background-color: rgb(236, 234, 234);
+    border: 1px solid rgb(208, 207, 207);
+    height: 16px;
+    width: 16px;
+}
+
+.hovered {
+    background-color: red;
+}
