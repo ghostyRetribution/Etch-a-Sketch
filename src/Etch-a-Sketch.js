@@ -1,20 +1,21 @@
 const container = document.querySelector('#container');
-const divCount =  prompt('Please enter a number between 1 - 32: ');
+const divCount =  32;
 
-if (divCount > 32 || divCount < 0) {
-	alert('Please choose a valid number');
-} else {
-	for (let i = 0; i <= divCount; i ++) {
-		createDivs(divCount);
-	}
-	function createDivs(num) {	
-		for (let i = 0; i <= num; i++) {
-			const div = document.createElement('div');
-			div.addEventListener('mouseover', () => {
-				div.classList.add('hovered');
-			});
-			div.classList.add('box');
-			container.appendChild(div);
-		}
+const colors = ['red', 'blue', 'orange', 'brown','gray', 'black', 'pink', 'aliceblue', 'violet', 'purple', 'yellow'];
+// add any color
+
+for (let i = 0; i <= divCount; i ++) {
+	createDivs(divCount);
+}
+function createDivs(divCount) {	
+	for (let i = 0; i <= divCount; i++) {
+		const div = document.createElement('div');
+		div.addEventListener('mouseover', () => {
+			const randomColor = Math.floor(Math.random() * colors.length);
+			div.setAttribute('style', `background-color: ${colors[randomColor]}`);
+		});
+		div.classList.add('box');
+		container.appendChild(div);
 	}
 }
+

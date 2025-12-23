@@ -16,10 +16,7 @@ body {
 .box {
     background-color: rgb(236, 234, 234);
     border: 1px solid rgb(208, 207, 207);
+	display: flex;
     height: 16px;
     width: 16px;
-}
-
-.hovered {
-    background-color: red;
 }
