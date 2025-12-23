@@ -1,21 +1,23 @@
-const container = document.querySelector('#container');
-const divCount =  32;
+const container = document.querySelector('.container');
+const divCount =  4; //32
 
-const colors = ['red', 'blue', 'orange', 'brown','gray', 'black', 'pink', 'aliceblue', 'violet', 'purple', 'yellow'];
+const colors = ['red', 'blue', 'orange', 'brown', 'black', 'pink', 'violet', 'purple', 'yellow'];
 // add any color
 
-for (let i = 0; i <= divCount; i ++) {
+for (let i = 0; i < divCount; i++) {
 	createDivs(divCount);
 }
+
 function createDivs(divCount) {	
-	for (let i = 0; i <= divCount; i++) {
-		const div = document.createElement('div');
-		div.addEventListener('mouseover', () => {
+	for (let i = 0; i < divCount; i++) {
+		const box = document.createElement('div');
+    	box.style.width = `calc(100% / ${divCount})`;
+    	box.style.height = `calc(100% / ${divCount})`;
+		box.addEventListener('mouseover', () => {
 			const randomColor = Math.floor(Math.random() * colors.length);
-			div.setAttribute('style', `background-color: ${colors[randomColor]}`);
+			box.style.backgroundColor = colors[randomColor]; 
 		});
-		div.classList.add('box');
-		container.appendChild(div);
+		box.classList.add('box');
+		container.appendChild(box);
 	}
 }
-
