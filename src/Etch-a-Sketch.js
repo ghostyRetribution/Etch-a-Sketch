@@ -1,6 +1,5 @@
 const container = document.querySelector('.container');
-const divCount =  4; //32
-
+const divCount = 64;
 const colors = ['red', 'blue', 'orange', 'brown', 'black', 'pink', 'violet', 'purple', 'yellow'];
 // add any color
 
